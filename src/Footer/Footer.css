@@ -1,0 +1,16 @@
+.app-footer {
+    background-color: #212529;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    border-top: 1px solid #34495e;
+}
+
+.app-footer p {
+    margin: 0;
+    padding: 0;
+}
