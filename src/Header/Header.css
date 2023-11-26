@@ -1,7 +1,6 @@
-.app-header {
+/* .app-header {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     background-color: #212529;
     padding: 10px 20px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -10,16 +9,42 @@
     position: fixed;
     top: 0;
     z-index: 1;
-    /* display: flex; */
-    justify-content: center; /* Changed from space-between to center for better alignment */
+
+    justify-content: center;
 
 
+  }  */
+
+  .header-container {
+    width: 100%; /* Ensure the container spans the entire width */
+    position: fixed;
+    top: 0;
+    z-index: 1;
   }
+  
+  .app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212529;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 100%; /* Ensure header spans entire width */
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
   
   .menu-icon {
     font-size: 24px;
     cursor: pointer;
-    padding-left: 10px;
+    padding-left: 10px; 
     padding-right: 10px;
     color: #fff;
   }
@@ -30,7 +55,7 @@
     background-color: #4CAF50; /* Adjust the color based on your logo */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     cursor: pointer;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     margin-right: 10px;
   }
   
