@@ -13,3 +13,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Structure
+- `src` contains the all code files
+ - `Footer` footer style and html widget
+ - `Header` header style and html widget
+ - `homepage` contains all the files needed for rendering homepage.
+ - `login` login wiget
+ - `menu` menu widget
+ - `categories` categories widget
