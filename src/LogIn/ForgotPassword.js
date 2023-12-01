@@ -9,7 +9,7 @@ function ForgotPassword() {
         <input type="email" placeholder="Email" required />
         {/* <input type="password" placeholder="Password" required /> */}
         <input type="submit" value="Send Email" />
-        <a href="/">Sign In Instead</a>
+        <a href="/signin">Sign In Instead</a>
         {/* <a href="/forgotpassword">Forgot Password?</a> */}
       </form>
     </div>

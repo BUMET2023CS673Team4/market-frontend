@@ -1,0 +1,17 @@
+.lastPath{
+    color: blue;
+}
+
+.bar{
+    /* background-color: rgba(137, 207, 240, 0.7); */
+    background-color: #EDF6FF;
+    width: 100%;
+    position: absolute;
+    top:70px;
+    height: 30px;
+}
+
+.path{
+    position: relative;
+    top: -25%;
+}

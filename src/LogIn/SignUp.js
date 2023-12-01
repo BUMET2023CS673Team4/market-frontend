@@ -10,7 +10,7 @@ function SignUp() {
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Password" required />
         <input type="submit" value="Sign Up" />
-        <a className= "forgot_password" href="/">Already have an account? Sign In</a>
+        <a className= "forgot_password" href="/signin">Already have an account? Sign In</a>
       </form>
     </div>
   );

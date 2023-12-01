@@ -1,0 +1,23 @@
+.display{
+    position: absolute;
+    width: 18%;
+    height: 40%;
+    /* background-color: rgba(137, 207, 240, 0.7); */
+    background-color: #EDF6FF;
+}
+
+.displayName {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.displayImg{
+    position: relative;
+    top: 10%;
+    left : 10%;
+    width: 80%;
+    height: 64%;
+}

@@ -1,0 +1,17 @@
+.displayitem{
+    position: absolute;
+    height: 14%;
+    width: 50%;
+}
+
+.displayitem .displayimage{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+}
+
+.displayitem .discription {
+    position: absolute;
+    left:35%;
+    width: 100%;
+}
