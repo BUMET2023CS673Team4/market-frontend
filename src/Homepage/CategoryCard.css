@@ -1,0 +1,32 @@
+.one-card {
+    height : 30%;
+    width : 14%;
+    border : 8px, solid;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 58%;
+    left: 14%;
+}
+
+.one-card .card-title {
+    height: 30%;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: large;
+}
+
+.one-card .card-image{
+    height:60%;
+    width: 90%;
+    top : 5%;
+    left : 5%;
+    position: relative;
+}

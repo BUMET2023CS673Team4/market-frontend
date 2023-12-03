@@ -1,0 +1,59 @@
+.detailwindow{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 56%;
+    height: 61%;
+    left: 14%;
+    top: 20%;
+    align-content: center;
+}
+
+.titleAndimg{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.detailtitle{
+    font-size: 30px;
+    height: 10%;
+    align-items: center;
+}
+
+.horizonline{
+    background-color: aqua;
+    border: none;
+    width: 100%;
+    height: 5%;
+}
+
+.disAndprice{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}
+
+.detailimg{
+    height: 80%;
+}
+
+.detailimg .detailimgSrc{
+    position: relative;
+    height: 60%;
+    width: 60%;
+    transform: translate(30%, 30%);
+}
+
+.cartbtn{
+    height: 30px;
+    color:white;
+    border: none;
+    border-radius: 8px;
+    width: 50%;
+    background-color: #00A6FB;
+    align-self: center;
+}
