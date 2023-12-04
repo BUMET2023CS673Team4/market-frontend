@@ -23,7 +23,7 @@ const Checkout = () => {
         setCurrentStep(currentStep < 4 ? currentStep + 1 : currentStep);
     };
 
-    const orderNumber = "123456789";
+    const orderNumber = "#123389978908";
     const pickupLocation = "Nearest Pickup Location";
 
     const [selectedLocation, setSelectedLocation] = useState('');
@@ -152,13 +152,15 @@ const Checkout = () => {
                         <div className="payment-section">
                             <div className="step-row">
                                 <div className="step-row-content">
-                                    <div className="step-row-number">3</div>
-                                    <div className="step-row-name">Payment</div>
+                                <div className="step-row-name">
+                                <span className="icon_sections">3</span>
+                                <div className="step_name"> PAYMENT</div></div>
                                 </div>
                             </div>
-                            <div className="payment-option">Credit Card</div>
                             <div className="payment-option">PayPal</div>
-                            <div className="checkout-actions">
+                            <div className="payment-option">Credit Card</div>
+                            
+                            <div className="checkout-actions-payment">
                                 <button className="continue-button" onClick={handleContinue}>Complete Payment</button>
                             </div>
                         </div>
@@ -168,16 +170,17 @@ const Checkout = () => {
 
                 </div>
 
-                {/* Right Column: Step 4 */}
-                {/* Right Column: Step 4 (Order Confirmation) */}
-              {/* Right Column: Step 4 (Order Confirmation) */}
               {currentStep === 4 && (
                     <div className="confirmation-column">
-                        <div className="confirmation-section">
+                        {/* <div className="confirmation-section"> */}
                             <h2 className="confirmation-header">Order Confirmation</h2>
-                            <p><strong>Order Number:</strong> {orderNumber}</p>
+                            {/* <p><strong>Order Number:</strong> {orderNumber}</p> */}
                             
                             <div className="order-items">
+                            <p><strong>Order Number:</strong> {orderNumber}</p>
+                            <p className="order-text">Your invoice has been sent to email: ******@bu.edu</p>
+                            <p className="order-text">Order pick up date: <strong> 12/12/2021</strong></p>
+                            <div className="cart_order_items">
                                 {cartItems.map(item => (
                                     <div key={item.id} className="cart-item">
                                         <img src={item.imageUrl} alt={item.name} className="cart-item-image" />
@@ -185,13 +188,14 @@ const Checkout = () => {
                                         <span className="cart-item-price">${item.price.toFixed(2)}</span>
                                     </div>
                                 ))}
+                                </div>
                                 <div className="cart-summary"> 
                                     {/* <div className="tax">Tax (5%): ${tax.toFixed(2)}</div> */}
-                                    <div className="total">Total: ${total.toFixed(2)}</div>
+                                    <div className="total_order">Total: ${total.toFixed(2)}</div>
                                 </div> 
-                                <p><strong>Pickup Location:</strong> {pickupLocation}</p>
+                                <p><strong>Pickup Location:</strong> {selectedLocation}</p>
                             </div>
-                        </div>
+                        {/* </div> */}
                     </div>
                 )}
             </div>
