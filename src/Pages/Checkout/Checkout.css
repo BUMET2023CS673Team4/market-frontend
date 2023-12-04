@@ -96,10 +96,13 @@ body {
   padding: auto;
 
 
-}.steps-container {
-  display: flex;
-  margin: 20px;
 }
+.steps-container {
+  display: flex;
+  margin: 20px 0;
+  gap: 20px; /* Adds a gap between the two columns */
+}
+
 
 .left-column {
   flex: 1;
@@ -217,7 +220,7 @@ body {
 
 .separator {
   height: 1px;
-  background-color: #ccc;
+  background-color: #F8F9FA;
   margin: 20px 0;
 }
 
@@ -248,7 +251,7 @@ body {
 
 
 .payment-section {
-  background-color: #fff;
+  background-color: #F8F9FA;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -257,11 +260,14 @@ body {
 
 .payment-option {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  background-color: white;
 }
+
 
 /* Restyle checkout-actions if needed */
 .checkout-actions {
@@ -271,30 +277,59 @@ body {
   margin-top: -20px;
 }
 
-.confirmation-column {
-  flex: 1;
-  background-color: #f0f8ff; /* Muted blue background */
+.checkout-actions-payment{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+
 }
 
-.confirmation-section {
-  padding: 20px;
+.confirmation-column {
+  flex: 1;
+  background-color: #EDF6FF; /* Muted blue background */
+  /* padding: 20px; */
+  margin-top: 20px; /* Aligns the top with the left column sections */
 }
+
+/* .confirmation-section {
+  padding: 20px;
+} */
 .confirmation-section p {
   margin-bottom: 10px;
 }
 
-
 .confirmation-header {
-  background-color: #00008b; /* Dark blue header */
+  background-color: #284B63; /* Dark blue header */
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  margin-top: 0; /* Ensure the header starts at the top */
+  border-radius: 0px;
+  font-size: 24px; /* Adjust font size as needed */
 }
 
 .order-info {
   margin-top: 20px;
+  
+}
+.order-items{
+  text-align: center;
 }
 
+.total_order{
+  font-size: 20px;
+  font-weight: bold;
+  font: "Helvetica Neue";
+  margin-right: 50px;
+}
+
+.order-text{
+  font-size: 16px; 
+  margin: 5px;
+}
+.cart_order_items{
+  margin-top: 20px;
+}
 .order-info p {
   margin-bottom: 10px;
 }
