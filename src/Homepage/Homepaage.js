@@ -1,9 +1,10 @@
 import react from 'react'
 import './Homepage.css'
-import Header from '../Header/Header.js'
+import Header from "../Components/Header/Header.js";
+import Footer from "../Components/Footer/Footer";
 import Carousel from './Carousel.js'
 import CategoryCard from './CategoryCard.js'
-import Footer from '../Footer/Footer'
+// import Footer from '../Footer/Footer'
 import Eicon from "./asserts/Earphone.png"
 import Bicon from "./asserts/Book.png"
 import Ficon from "./asserts/Furniture.png"

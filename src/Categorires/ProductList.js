@@ -1,6 +1,6 @@
 import "./ProductList.css"
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
+import Header from "../Components/Header/Header.js";
+import Footer from "../Components/Footer/Footer";
 import ProductItem from "./ProductListItem"
 
 export default function ProductList(){

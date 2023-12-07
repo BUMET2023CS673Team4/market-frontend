@@ -1,5 +1,5 @@
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
 import "./Product.css"
 import Display from "./Display"
 import FuniturePic from "./Forniture/asserts/Funiture.png"

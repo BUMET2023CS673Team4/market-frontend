@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
-<<<<<<< HEAD:src/Header/Header.js
-import Menu from '../Menu/Menu';
-=======
-import Menu from "../Menu/Menu.js"
->>>>>>> 2a62763 (Switching to codecommit):src/Components/Header/Header.js
+import Menu from '../Menu/Menu.js'; 
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-<<<<<<< HEAD:src/Header/Header.js
-  return (
-=======
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+//   return (
+//     <header className="app-header">
+//       <div className="menu-icon" onClick={toggleMenu}>&#x2630;</div> {/* Hamburger icon */} 
+//       <div className="logo"></div> {/* Logo */}
+//       <input className="search-input" type="text" placeholder="Search..." />
+//       <div className="user-profile"></div> {/* User profile */}
 
+//       {isMenuOpen && <Menu />} {/* Render the Menu component */}
+//     </header>
+//   );
+// }
+
+// export default Header;
 return (
   <div className="header-container">
->>>>>>> 2a62763 (Switching to codecommit):src/Components/Header/Header.js
     <header className="app-header">
-      <Menu />{/* Hamburger icon */}
-      <div className="logo" onClick={()=>{window.location.href="/"}}></div> {/* Logo */}
+      <div className="menu-icon" onClick={toggleMenu}>&#x2630;</div> {/* Hamburger icon */}
+      <div className="logo"></div> {/* Logo */}
       <input className="search-input" type="text" placeholder="Search..." />
-      <button className="user-profile" onClick={()=>{window.location.href="/signin"}} /> {/* User profile */}
+      <div className="user-profile"></div> {/* User profile */}
     </header>
-  );
+
+    {isMenuOpen && <Menu />}
+  </div>
+);
 }
 
 export default Header;
