@@ -1,5 +1,5 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "../Components/Header/Header.js";
+import Footer from "../Components/Footer/Footer";
 import "./ProductDetail.css"
 
 export default function ProductDetails({product}){
