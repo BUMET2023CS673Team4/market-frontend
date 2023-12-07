@@ -11,6 +11,10 @@ import ElectronicsItem from "./Categorires/Electronics/ElectronicsItem";
 import FornitureItem from "./Categorires/Forniture/FornitureItem";
 import TextbooksItem from "./Categorires/Textbooks/TextbooksItem";
 import FornitureDetail from "./Categorires/Forniture/FornitureDetail";
+import SignIn from "./Pages/SignIn/SignIn";
+import SignUp from "./Pages/SignUp/SignUp";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import Checkout from "./Pages/Checkout/Checkout";
 
 
 function App() {
@@ -29,6 +33,8 @@ function App() {
           <Route path="/product/funiture/productlist" element={<FornitureItem />} />
           <Route path="/product/textbooks/productlist" element={<TextbooksItem />} />
           <Route path="/product/electronics/details" element={<FornitureDetail />} />
+          <Route path ="/forgotpassword" element = {<ForgotPassword/>}/>
+          <Route path ="/checkout" element = {<Checkout/>}/>
         </Routes>
       </div>
     </Router>

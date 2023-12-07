@@ -1,7 +1,7 @@
 import React from "react";
-import "./SignUp.css";
-import Header from "../Header/Header.js";
-import Footer from "../Footer/Footer";
+import "./SignIn.css";
+import Header from "../../Components/Header/Header.js";
+import Footer from "../../Components/Footer/Footer";
 
 function SignIn() {
 
