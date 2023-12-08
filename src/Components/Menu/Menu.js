@@ -45,7 +45,9 @@ const Menu = () => {
           )}
         </div>
       ))}
-      <button className="sign-out-button">SIGN OUT / SIGN IN</button>
+      <button className="sign-out-button" onClick={() => {window.location="/signin"}}>
+        SIGN OUT / SIGN IN
+      </button>
     </div>
   );
 };
