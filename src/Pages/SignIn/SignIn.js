@@ -9,11 +9,12 @@ function SignIn() {
     <div className="App">
       <Header />
 
-      <form className="form-signin">
+      <form className="form-signin" action="/api/login/" method="POST">
         <h1>Sign In</h1>
         <div className="fields">
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
+          {getCookie("csrftoken") && <input type="hidden" name="csrfmiddlewaretoken" value={getCookie("csrftoken")}></input>}
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="password" placeholder="Password" required />
           <input type="submit" value="Sign In" />
         </div>
 
@@ -24,6 +25,19 @@ function SignIn() {
       <Footer />
     </div>
   );
+}
+
+function getCookie(cookieName) {
+  const cookies = document.cookie.split('; ');
+
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].split('=');
+    if (cookie[0] === cookieName) {
+      return cookie[1];
+    }
+  }
+
+  return null;
 }
 
 export default SignIn;
