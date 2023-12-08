@@ -2,6 +2,7 @@ import React from "react";
 import "./SignIn.css";
 import Header from "../../Components/Header/Header.js";
 import Footer from "../../Components/Footer/Footer";
+import { GetCookie } from '../../Utility/Cookie';
 
 function SignIn() {
 
@@ -12,7 +13,7 @@ function SignIn() {
       <form className="form-signin" action="/api/login/" method="POST">
         <h1>Sign In</h1>
         <div className="fields">
-          {getCookie("csrftoken") && <input type="hidden" name="csrfmiddlewaretoken" value={getCookie("csrftoken")}></input>}
+          {GetCookie("csrftoken") && <input type="hidden" name="csrfmiddlewaretoken" value={GetCookie("csrftoken")}></input>}
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="password" placeholder="Password" required />
           <input type="submit" value="Sign In" />
@@ -25,19 +26,6 @@ function SignIn() {
       <Footer />
     </div>
   );
-}
-
-function getCookie(cookieName) {
-  const cookies = document.cookie.split('; ');
-
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].split('=');
-    if (cookie[0] === cookieName) {
-      return cookie[1];
-    }
-  }
-
-  return null;
 }
 
 export default SignIn;
