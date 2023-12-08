@@ -28,12 +28,13 @@ function Title({name, pic}){
 }
 
 function Discription({discrip, price}){
+
     return (
         <div className="disAndprice">
             <b className="distitle">Discription</b>
             <p className="dis">{discrip}</p>
             <p className="price"><b>Price</b> : ${price}</p>
-            <button className="cartbtn">Add to Cart</button>
+            <button className="cartbtn" onClick={() => {window.location.href = '/checkout';}}>Add to Cart</button>
         </div>
     )
 }
