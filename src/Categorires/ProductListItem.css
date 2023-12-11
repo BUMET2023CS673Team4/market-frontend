@@ -1,17 +1,15 @@
 .displayitem{
-    position: absolute;
-    height: 14%;
-    width: 50%;
-}
-
-.displayitem .displayimage{
-    position: absolute;
-    height: 100%;
-    width: 20%;
-}
-
-.displayitem .discription {
-    position: absolute;
-    left:35%;
-    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    width: 500px;
+    height: 150px;
+    display: flex;
+    
+    .displayimage{
+        display: flex;
+        justify-content: center;
+        margin: 0 5px;
+        height: 100%;
+    }
 }
