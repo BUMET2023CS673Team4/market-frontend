@@ -19,7 +19,7 @@ export default function ProductItem({ imgsrc, itemId, itemName }) {
                 <img src={existPic(imgsrc)} alt="product" />
             </div>
             <p className="discription">{itemName || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, volutpat id magna id, varius aliquet leo."}</p>
-            <AddToCart />
+            {/* <AddToCart /> */}
         </div>
         </a>
     )

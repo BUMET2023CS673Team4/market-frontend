@@ -33,14 +33,13 @@ export default function ProductDetails({ product }) {
         )
     }
     else {
-        console.log(data);
         return (<>
             <Header />
             <div className="detailwindow">
                 {data &&
                     <>
                         <Title name={data.name} pic={'/media/image/' + data.image} />
-                        <Discription discrip={data.description} price={data.price} />
+                        <Discription discrip={data.description} price={data.price} itemid={data.id} />
                     </>
                 }
             </div>
@@ -61,13 +60,13 @@ function Title({ name, pic }) {
     )
 }
 
-function Discription({ discrip, price }) {
+function Discription({ discrip, price, itemid }) {
     return (
         <div className="disAndprice">
             <b className="distitle">Discription</b>
             <p className="dis">{discrip}</p>
             <p className="price"><b>Price</b> : ${price}</p>
-            <AddToCart />
+            <AddToCart itemid={itemid}/>
         </div>
     )
 }

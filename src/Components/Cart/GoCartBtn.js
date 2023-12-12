@@ -1,16 +1,22 @@
 import { useState } from "react";
 
-export default function AddToCart(){    
+export default function AddToCart(itemid){    
     const [isClicked, setIsClicked] = useState(false);
 
-    const handleCllick = () => {
-        alert("Successfully Added!")
-        setIsClicked(true);
+    const handleCllick = async () => {
+        const response = await fetch(`/api/products/${itemid.itemid}/add-to-cart/`);
+        if(response.status === 201)
+        {
+            setIsClicked(true);
+        }
+        else {
+            alert("Please login first");
+        }
     };
 
     return(
         <>
-            {isClicked? <GoCheckoutBtn /> : <AddToCartBtn click={handleCllick} />}
+            {isClicked? <GoCheckoutBtn /> : <AddToCartBtn click={handleCllick} itemid={itemid}/>}
         </>
     )
 }
