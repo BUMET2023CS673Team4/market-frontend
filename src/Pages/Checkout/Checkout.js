@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Checkout.css'; // Importing the CSS
 import Header from "../../Components/Header/Header.js";
 import Footer from "../../Components/Footer/Footer";
+import { GetCookie } from '../../Utility/Cookie';
 
 
 const Checkout = () => {
     const [currentStep, setCurrentStep] = useState(1); // State to manage current step
+    const [stripeStep, setStripeStep] = useState(0); // State to show Stripe component [Step 3]
+    const [cartItems, setCartItems] = useState([]); // State to manage cart items
 
-    // Dummy data for cart items
-    const cartItems = [
-        { id: 1, name: "Item 1", price: 10.00, imageUrl: "path/to/image1.jpg" },
-        { id: 2, name: "Item 2", price: 15.00, imageUrl: "path/to/image2.jpg" },
-        { id: 3, name: "Item 3", price: 20.00, imageUrl: "path/to/image3.jpg" },
-    ];
+    useEffect(() => {
+        (async () => {
+            if (cartItems.length > 0) return;
+            const response = await fetch("/api/show-items-in-cart/", {
+                headers: {
+                    "X-CSRFToken": GetCookie("csrftoken"),
+                },
+            });
+            const data = await response.json();
+            setCartItems(data['cart']);
+        })();
+    }, [cartItems]);
 
-    const taxRate = 0.05; // 5% tax
+    const taxRate = 0.00; // 0% tax
     const subtotal = cartItems.reduce((total, item) => total + item.price, 0);
     const tax = subtotal * taxRate;
     const total = subtotal + tax;
@@ -30,6 +39,49 @@ const Checkout = () => {
 
     const handleLocationChange = (event) => {
         setSelectedLocation(event.target.value);
+    }
+
+    async function loadStripe() {
+        const stripeScriptNode = document.createElement('script');
+        stripeScriptNode.setAttribute('src', 'https://js.stripe.com/v3/');
+        document.body.appendChild(stripeScriptNode);
+
+        // hack to wait for stripe script to load
+        var interval = setInterval(function () {
+            // get elem
+            if (typeof window.Stripe == 'undefined') return;
+            clearInterval(interval);
+
+            // the rest of the code
+            initialize();
+        }, 10);
+    }
+
+    async function initialize() {
+        const stripe_key = await fetch("/api/stripe-public-key/", {
+            headers: {
+                "X-CSRFToken": GetCookie("csrftoken"),
+            },
+        });
+        const { public_key } = await stripe_key.json();
+        const stripe = window.Stripe(public_key);
+        const response = await fetch("/api/create-checkout-session/", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": GetCookie("csrftoken"),
+            },
+        });
+
+        const { client_secret } = await response.json();
+
+        const checkout = await stripe.initEmbeddedCheckout({
+            clientSecret: client_secret,
+            onComplete: handleContinue
+        });
+
+        // Mount Checkout
+        checkout.mount('.stripe-container');
+        setStripeStep(2);
     }
 
     return (
@@ -67,7 +119,7 @@ const Checkout = () => {
                         </div>
                         {cartItems.map(item => (
                             <div key={item.id} className="cart-item">
-                                <img src={item.imageUrl} alt={item.name} className="cart-item-image" />
+                                <img src={"/media/image/"+item.image} alt={item.name} className="cart-item-image" />
                                 <span className="cart-item-name">{item.name}</span>
                                 <span className="cart-item-price">${item.price.toFixed(2)}</span>
                                 <button className="remove-button">Remove</button>
@@ -157,8 +209,19 @@ const Checkout = () => {
                                 <div className="step_name"> PAYMENT</div></div>
                                 </div>
                             </div>
-                            <div className="payment-option">PayPal</div>
-                            <div className="payment-option">Credit Card</div>
+                            <div className="payment-option" onClick={() => {setStripeStep(1)}}>Stripe</div>
+                            {
+                                (stripeStep >= 1 && (
+                                    <>
+                                    <div className="stripe-container">
+                                        {/* Stripe component goes here */}
+                                    </div>
+                                    </>
+                                ))
+                            }
+                            {stripeStep === 1 && loadStripe() && <></>}
+                            {/* <div className="payment-option">PayPal</div> */}
+                            {/* <div className="payment-option">Credit Card</div> */}
                             
                             <div className="checkout-actions-payment">
                                 <button className="continue-button" onClick={handleContinue}>Complete Payment</button>
