@@ -1,3 +1,4 @@
+import AddToCart from "../Components/Cart/GoCartBtn";
 import defaultPic from "./asserts/defaultPicture.png"
 import "./ProductListItem.css"
 
@@ -18,6 +19,7 @@ export default function ProductItem({ imgsrc, itemId, itemName }) {
                 <img src={existPic(imgsrc)} alt="product" />
             </div>
             <p className="discription">{itemName || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, volutpat id magna id, varius aliquet leo."}</p>
+            <AddToCart />
         </div>
         </a>
     )
