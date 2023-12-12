@@ -1,6 +1,7 @@
 import Header from "../Components/Header/Header.js";
 import Footer from "../Components/Footer/Footer";
 import "./ProductDetail.css"
+import AddToCart from "../Components/Cart/GoCartBtn.js";
 
 export default function ProductDetails({product}){
     return(
@@ -34,7 +35,7 @@ function Discription({discrip, price}){
             <b className="distitle">Discription</b>
             <p className="dis">{discrip}</p>
             <p className="price"><b>Price</b> : ${price}</p>
-            <button className="cartbtn" onClick={() => {window.location.href = '/checkout';}}>Add to Cart</button>
+            <AddToCart />
         </div>
     )
 }
