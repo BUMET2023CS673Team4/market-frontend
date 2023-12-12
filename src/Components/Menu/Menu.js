@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
 import './Menu.css';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   const [openCategory, setOpenCategory] = useState(null);
 
   const menuItems = {
     'Categories': {
-      subItems: ['ELECTRONICS', 'TEXTBOOKS', 'FURNITURE'], // Add your subcategories here
+      subItems: [       
+        { name: 'ELECTRONICS', path: '/product/electronics' },
+        { name: 'TEXTBOOKS', path: '/product/textbooks' },
+        { name: 'FURNITURE', path: '/product/funiture' }
+      ],
     },
-    'All Products': {},
-    'Cart': {},
-    'Account': {
-      subItems: ['ORDER HISTORY', 'PROFILE'], // Add your account options here
-    }
+    'All Products': { path: '/product/furniture' },
+    // 'Cart': { path: '/cart' },
+    // 'Account': {
+    //   subItems: [
+    //     { name: 'ORDER HISTORY', path: '/order-history' },
+    //     { name: 'PROFILE', path: '/profile' }
+    //   ],
+    // }
   };
 
   const toggleCategory = (item) => {
     if (openCategory === item) {
       setOpenCategory(null);
-    } else {
+    } else if (menuItems[item].subItems) {
       setOpenCategory(item);
     }
   };
@@ -27,21 +35,39 @@ const Menu = () => {
     <div className="menu">
       {Object.entries(menuItems).map(([item, details], index) => (
         <div key={index} className="menu-category">
-          <button 
-            className="menu-item" 
-            onClick={() => toggleCategory(item)}
-            data-has-subcategories={!!details.subItems}
-          >
-            {item}
-          </button>
-          {openCategory === item && details.subItems && (
-            <div className="dropdown">
-              {details.subItems.map((subItem, subIndex) => (
-                <div key={subIndex} className="dropdown-item">
-                  {subItem}
+          
+          {details.subItems ? (
+            <>
+            
+              <button 
+                className="menu-item" 
+                onClick={() => toggleCategory(item)}
+                data-has-subcategories={!!details.subItems}
+                
+              >
+                {item}
+     
+              
+              </button>
+              
+              {openCategory === item && (
+                <div className="dropdown">
+                     
+                  {details.subItems.map((subItem, subIndex) => (
+                    <Link to={subItem.path} key={subIndex} className="dropdown-item">
+                      {subItem.name}
+                 
+                    </Link>
+                  ))}
                 </div>
-              ))}
-            </div>
+              )}
+            </>
+          ) : (
+            <Link to={details.path} className="menu-item">
+              {item}
+       
+            </Link>
+           
           )}
         </div>
       ))}

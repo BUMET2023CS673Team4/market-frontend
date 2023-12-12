@@ -1,8 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import SignIn from "./LogIn/SignIn";
-// import SignUp from "./LogIn/SignUp";
-// import ForgotPassword from "./LogIn/ForgotPassword";
 import Homepage from "./Homepage/Homepaage";
 import Electronics from "./Categorires/Electronics/Electronics";
 import Textbooks from "./Categorires/Textbooks/Textbooks";
@@ -15,6 +12,7 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import Checkout from "./Pages/Checkout/Checkout";
+
 
 
 function App() {

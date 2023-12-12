@@ -13,7 +13,7 @@ function ForgotPassword() {
         <input className= "forgotpassword_input" type="email" placeholder="Email" required />
    
         <input className="forgotpassword_submit" type="submit" value="Send Email" />
-        <a href="/">Sign In Instead</a>
+        <a href="/signin">Sign In Instead</a>
       
         </div>
       </form>

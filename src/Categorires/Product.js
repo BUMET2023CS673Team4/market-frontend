@@ -12,7 +12,15 @@ export default function Product({content}){
     ]
 
     var currentPath = window.location.pathname;
-    currentPath = "HOME" + currentPath.replace(/[/]/g, " > ").toLocaleUpperCase();
+
+currentPath = "Home" + currentPath
+  .split('/') 
+  .map(segment => 
+    segment.charAt(0).toUpperCase() + segment.slice(1).toLowerCase() 
+  )
+  .join(' > ');
+
+    
     var last = currentPath.split(">");
     last = last[last.length - 1]
     currentPath = currentPath.replace(last, "");

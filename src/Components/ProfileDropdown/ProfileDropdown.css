@@ -1,0 +1,70 @@
+/* ProfileDropdown.css */
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%; /* Positioned just below the profile icon */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 160px; /* Adjust as necessary */
+    padding: 10px 10px; /* Padding on top and bottom */
+    margin-right: 30px;
+
+  }
+  
+  /* .profile-dropdown p {
+    margin: 10px 15px;
+    color: #333;
+    font-size: 14px; 
+    margin-right: 30px;
+  }
+  
+  .profile-dropdown a, .profile-dropdown button {
+    display: block;
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+  } */
+  .profile-dropdown p, .profile-dropdown a, .profile-dropdown button {
+    padding: 10px 15px;
+    margin: 0; /* Remove default margins */
+    border-bottom: 1px solid #ddd; /* Bottom border for each item */
+    color: #333; /* Text color */
+    text-decoration: none;
+    display: block; /* Ensure links and buttons take full width */
+  }
+  .profile-dropdown p:last-child,
+.profile-dropdown a:last-child,
+.profile-dropdown button:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown button {
+    background-color: #00A6FB; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 3px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Centered text */
+    font-size: 14px; /* Font size */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  .profile-dropdown button:hover {
+    background-color: #008ad1; /* Slightly darker blue on hover */
+  }
+  
+  .profile-dropdown a:hover, .profile-dropdown button:hover {
+    background-color: #f0f0f0; /* Slight highlight on hover */
+  }
+  
