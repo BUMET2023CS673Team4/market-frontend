@@ -2,21 +2,25 @@ import AddToCart from "../Components/Cart/GoCartBtn";
 import defaultPic from "./asserts/defaultPicture.png"
 import "./ProductListItem.css"
 
-export default function ProductItem({pos, content}){
+export default function ProductItem({ imgsrc, itemId, itemName }) {
 
-    function existPic(a){
-        if(a == null) {
+    function existPic(a) {
+        if (a == null) {
             return defaultPic;
         } else {
-            return content;
+            return a;
         }
     }
 
-    return(
-        <div className="displayitem" style={pos}>
-            <img className="displayimage" src={existPic(content)} />
-            <p className="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, volutpat id magna id, varius aliquet leo.</p>
+    return (
+        <a href={'/products/'+itemId}>
+        <div className="displayitem">
+            <div className="displayimage">
+                <img src={existPic(imgsrc)} alt="product" />
+            </div>
+            <p className="discription">{itemName || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, volutpat id magna id, varius aliquet leo."}</p>
             <AddToCart />
         </div>
+        </a>
     )
 }
