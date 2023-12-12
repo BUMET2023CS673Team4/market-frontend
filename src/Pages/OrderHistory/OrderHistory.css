@@ -1,0 +1,75 @@
+
+
+.order-history-app {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    top: 0;
+    margin-top:-250px;
+    
+  }
+  
+  .order-history-container {
+    /* max-width: 800px; */
+    /* margin: auto; */
+    padding: 20px;
+    background-color: #fff;
+
+
+  }
+  
+  .back-to-account a {
+    display: inline-block;
+    margin-bottom: 20px;
+    /* color: #00A6FB; */
+    text-decoration: none;
+  }
+  
+  .back-to-account a:hover {
+    text-decoration: underline;
+  }
+  
+  .order-history-section h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .order-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .order-details span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .no-orders {
+    color: #888;
+  }
+  
+  .view-all-orders a {
+    display: block;
+    color: #00A6FB;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .view-all-orders a:hover {
+    text-decoration: underline;
+  }
+  
+  

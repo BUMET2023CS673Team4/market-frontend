@@ -1,0 +1,143 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+
+}
+
+.App{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* height: 100vh; */
+    width: 100%;
+    left: 0;
+    
+ 
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  
+}
+
+
+
+.account-container {
+  flex-grow: 1; 
+  width: 100%; 
+  /* max-width: 800px;  */
+  margin: auto; 
+  padding:0px 20px; 
+  background-color: #fff; 
+  margin-top: 90px;
+}
+
+.section {
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 20px; 
+  margin-bottom: 20px; 
+}
+
+h1, h2 {
+  color: #333;
+  text-align: left;
+}
+
+.account-actions button {
+  background-color: #00A6FB;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.account-actions button:hover {
+  background-color: #008ad1;
+}
+
+
+  .account-content h1, 
+.account-content h2 {
+  color: #333;
+  margin: 0 0 20px 0; 
+}
+  
+.order-history,
+.account-info,
+.settings {
+  margin-bottom: 20px;
+}
+  
+.details p {
+    margin-bottom: 10px;
+  }
+  .actions button {
+    padding: 10px;
+    background-color: #00A6FB;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .order-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: start; 
+  }
+  
+  .order-tile {
+    background-color: transparent; 
+    border: 1px solid #e1e1e1; 
+    border-radius: 8px; 
+    padding: 20px; 
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px; 
+  }
+  
+  .order-tile-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  
+  .order-number {
+    font-weight: bold; 
+    flex-grow: 1; 
+  }
+  
+  .receipt-link {
+    color: #00A6FB;
+    text-decoration: none; 
+    margin-bottom: 10px;
+  }
+  
+  .receipt-link:hover {
+    text-decoration: underline; 
+  }
+  
+  .view-all-orders-button {
+    display: block;
+    margin-top: 20px;
+    text-align: left;
+    color: #00A6FB;
+    text-decoration: none;
+  }
+  
+  .view-all-orders-button:hover {
+    text-decoration: underline;
+  }
+  
+   

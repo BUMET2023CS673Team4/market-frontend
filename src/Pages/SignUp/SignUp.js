@@ -43,7 +43,7 @@ class SignUp extends React.Component {
   };
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ backgroundColor: '#212529', width:"100%" }}>
         <Header />
         <form className="form-signup" action="/api/signup/" method="POST">
           <h1>Sign Up</h1>

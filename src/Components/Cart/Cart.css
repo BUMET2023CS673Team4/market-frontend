@@ -1,0 +1,64 @@
+.cart-dropdown {
+    position: absolute;
+    right: 0;
+    width: 270px;
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+  }
+
+  .cart-dropdown h2 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    margin-left: 10px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+    border-bottom: 1px solid #000; /* Single line border */
+    padding-bottom: 5px; /* Padding to space out the border from the text */
+    /* text-align: center; */
+    font-weight: normal;
+  }
+
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .cart-item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .cart-item-name, .cart-item-price {
+    margin-right: 10px;
+  }
+  
+  .cart-item-remove {
+    cursor: pointer;
+    color: red;
+  }
+  
+  .checkout-button, .sign-in-button {
+    background-color: #00A6FB; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    margin-top: 10px; /* Margin at the top */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded edges */
+    font-size: 16px; /* Font size */
+    text-align: center; /* Centered text */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Adjusts the box model to include padding and border */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .checkout-button:hover, .sign-in-button:hover {
+    background-color: #008ad1; /* Slightly darker blue on hover */
+  }
+  
+  
