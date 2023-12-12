@@ -14,7 +14,7 @@ const Menu = () => {
       ],
     },
     'All Products': { path: '/product/furniture' },
-    // 'Cart': { path: '/cart' },
+    'About Us': { path: '/about' },
     // 'Account': {
     //   subItems: [
     //     { name: 'ORDER HISTORY', path: '/order-history' },

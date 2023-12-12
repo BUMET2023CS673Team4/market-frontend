@@ -12,6 +12,8 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import Checkout from "./Pages/Checkout/Checkout";
+import AccountDetails from "./Pages/AccountDetails/AccountDetails";
+import OrderHistory from "./Pages/OrderHistory/OrderHistory";
 
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/product/electronics/details" element={<FornitureDetail />} />
           <Route path ="/forgotpassword" element = {<ForgotPassword/>}/>
           <Route path ="/checkout" element = {<Checkout/>}/>
+          <Route path ="/accountdetails" element = {<AccountDetails/>}/>
+          <Route path ="/orderhistory" element = {<OrderHistory/>}/>
         </Routes>
       </div>
     </Router>

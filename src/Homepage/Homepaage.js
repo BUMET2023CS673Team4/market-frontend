@@ -21,7 +21,7 @@ export default function Homepage(){
         <Header />
         <Carousel />
         <CategoryCard pos={position[0]} productName="Electronics" productUrl="/product/electronics" pic={Eicon} />
-        <CategoryCard pos={position[1]} productName="Textbooks" productUrl="/product/textbooks" pic={Bicon} />
+        <CategoryCard pos={position[1]} productName="Books" productUrl="/product/textbooks" pic={Bicon} />
         <CategoryCard pos={position[2]} productName="Furniture" productUrl="/product/funiture" pic={Ficon} />
         <Footer />
     </>
